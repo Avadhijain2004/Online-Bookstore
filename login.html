@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background: #000000;
+            color: #fff;
+        }
+
+        #header {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-image: url('images/book.jpg');
+        }
+
+        .container {
+            padding: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: none;
+            background-color: rgb(255, 255, 255);
+            opacity: 0.6;
+            height: 100px;
+            width: 1525px;
+        }
+
+        .logo {
+            width: 150px;
+            height: 120px;
+            padding: 10px 10px 10px 30px;
+        }
+
+        .main-logo {
+            width: 120px;
+            height: 85px;
+        }
+
+        .header {
+            font-size: 50px;
+            padding-left: 380px;
+            color: black;
+            font-weight: 700;
+        }
+
+        .header1 {
+            font-size: 50px;
+            color: black;
+            font-weight: 700;
+        }
+
+        .header span {
+            color: rgb(1, 1, 114);
+        }
+
+        .navigation {
+            background-color: rgb(37, 36, 36);
+            width: 1525px;
+        }
+
+        .navigation ul li {
+            display: inline-block;
+            list-style: none;
+            margin: 20px 20px;
+        }
+
+        .navigation ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .navigation ul li a::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: rgb(84, 84, 218);
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+
+        .navigation ul li a:hover::after {
+            width: 100%;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: black;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        h2 {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 550;
+            font-size: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        button {
+            background-color: #029b2b;
+            color: #fff;
+            padding: 10px 50px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .fgp {
+            text-decoration: none;
+            color: #0074D9;
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+        }
+
+        .fgp:hover {
+            color: #e80b0b;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo5.png" class="main-logo">
+                <h1 class="header"><span>V</span>idya<span>S</span>agar</h1>
+                <img src="images/logo3.png" class="logo">
+                <h1 class="header1">alaya</h1>
+            </nav>
+            <div class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="catalogue.html">Catalogue</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="login-container">
+                <h2>Login to Your Account</h2>
+                <form id="login-form" action="#" onsubmit="return validateLogin()">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+        
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+        
+                    <div class="button-wrapper">
+                        <button type="submit" id="submit-btn">Login</button>
+                    </div>
+                    <a href="/forgot-password" class="fgp">Forgot Password?</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function validateLogin() {
+            var userId = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Regular expression patterns for validation
+            var userIdPattern = /^[a-zA-Z]{6,}$/;
+            var passwordPattern = /^.{6,}$/;
+
+            // Validation for User-ID
+            if (!userIdPattern.test(userId)) {
+                alert("User-ID should contain only alphabets and have a minimum length of 6 characters.");
+                return false;
+            }
+
+            // Validation for Password
+            if (!passwordPattern.test(password)) {
+                alert("Password should have a minimum length of 6 characters.");
+                return false;
+            }
+
+            // If all validations pass, return true to submit the form
+            return true;
+        }
+    </script>
+</body>
+
+</html>

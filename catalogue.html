@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        body {
+            background: #000000;
+            color: #fff;
+        }
+        #header {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-image: url('images/book.jpg');
+        }
+        .container {
+            padding: 10px;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: none;
+            background-color: rgb(255, 255, 255);
+            opacity: 0.6;
+            height: 100px;
+            width: 1525px;
+        }
+        .logo {
+            width: 150px;
+            height: 120px;
+            padding: 10px 10px 10px 30px;
+        }
+        .main-logo {
+            width: 120px;
+            height: 85px;
+        }
+        .header {
+            font-size: 50px;
+            padding-left: 430px;
+            color: black;
+            font-weight: 700;
+        }
+        .header1 {
+            font-size: 50px;
+            color: black;
+            font-weight: 700;
+        }
+        .header span {
+            color: rgb(1, 1, 114);
+        }
+        .navigation {
+            background-color: rgb(37, 36, 36);
+            width: 1525px;
+        }
+        .navigation ul li {
+            display: inline-block;
+            list-style: none;
+            margin: 20px 20px;
+        }
+        .navigation ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+        }
+        .navigation ul li a::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: rgb(84, 84, 218);
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+        .navigation ul li a:hover::after {
+            width: 100%;
+        }
+        .catalog-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #000000;
+            text-align: center;
+            opacity: 0.85;
+            font-size: 16px;
+            font-weight: 545;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        img {
+            max-width: 100px;
+            height: auto;
+        }
+        .add-to-cart-btn {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo5.png" class="main-logo">
+                <h1 class="header"><span>V</span>idya<span>S</span>agar</h1>
+                <img src="images/logo3.png" class="logo">
+                <h1 class="header1">alaya</h1>
+            </nav>
+            <div class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="catalogue.html">Catalogue</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="catalog-container">
+                <h2>Book Catalogue</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cover</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Publisher</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="images/c language.jpg" alt="Book Cover"></td>
+                            <td>The C Programming Language</td>
+                            <td>Briam W.Kernighan and Dennis M.Ritchie</td>
+                            <td>Prentice Hall</td>
+                            <td>Rs.500</td>
+                            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/ece.jpg" alt="Book Cover"></td>
+                            <td>Fundamentals of Electric Circuits</td>
+                            <td>Charles Alexander and Matthew Sadiku</td>
+                            <td>MC Graw Hill</td>
+                            <td>Rs.400</td>
+                            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/RD sharma.jpg" alt="Book Cover"></td>
+                            <td>Mathematics (Class-10<sup>th</sup>)</td>
+                            <td>RD Sharma</td>
+                            <td>Dhanpat Rai</td>
+                            <td>Rs.900</td>
+                            <td><button class="add-to-cart-btn">Add to Cart</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

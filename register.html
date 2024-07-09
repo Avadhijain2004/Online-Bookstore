@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background: #000000;
+            color: #fff;
+        }
+
+        #header {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-image: url('images/book.jpg');
+        }
+
+        .container {
+            padding: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: none;
+            background-color: rgb(255, 255, 255);
+            opacity: 0.6;
+            height: 100px;
+            width: 1525px;
+        }
+
+        .logo {
+            width: 150px;
+            height: 120px;
+            padding: 10px 10px 10px 30px;
+        }
+
+        .main-logo {
+            width: 120px;
+            height: 85px;
+        }
+
+        .header {
+            font-size: 50px;
+            padding-left: 380px;
+            color: black;
+            font-weight: 700;
+        }
+
+        .header1 {
+            font-size: 50px;
+            color: black;
+            font-weight: 700;
+        }
+
+        .header span {
+            color: rgb(1, 1, 114);
+        }
+
+        .navigation {
+            background-color: rgb(37, 36, 36);
+            width: 1525px;
+        }
+
+        .navigation ul li {
+            display: inline-block;
+            list-style: none;
+            margin: 20px 20px;
+        }
+
+        .navigation ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .navigation ul li a::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            background: rgb(84, 84, 218);
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+
+        .navigation ul li a:hover::after {
+            width: 100%;
+        }
+
+        .reg-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: black;
+            z-index: -1;
+            opacity: 0.85;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            font-weight: 530;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+            display: inline-block;
+        }
+
+        select {
+            width: calc(33.33% - 6px);
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input[type="submit"] {
+            background-color: #13d557;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .form-group-inline {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group-inline label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo5.png" class="main-logo">
+                <h1 class="header"><span>V</span>idya<span>S</span>agar</h1>
+                <img src="images/logo3.png" class="logo">
+                <h1 class="header1">alaya</h1>
+            </nav>
+            <div class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="catalogue.html">Catalogue</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="reg-container">
+                <h2>Registration Form</h2>
+                <form id="registration-form" action="#" method="post" onsubmit="return validateRegistration()">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail id:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone number:</label>
+                        <input type="text" id="phone" name="phone" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="dob">Date of birth:</label>
+                        <select id="day" name="day" required>
+                            <option value="">Day</option>
+                        </select>
+                        <select id="month" name="month" required>
+                            <option value="" disabled selected>Month</option>
+                            <option value="january">January</option>
+                            <option value="feburary">Feburary</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                        <select id="year" name="year" required>
+                            <option value="" disabled selected>Year</option>
+                        </select>
+                    </div>
+                    <div class="form-group-inline">
+                        <label>Languages known:</label><br>
+                        <input type="checkbox" id="english" name="language[]" value="english">
+                        <label for="english">English</label>
+                        <input type="checkbox" id="telugu" name="language[]" value="telugu">
+                        <label for="telugu">Telugu</label>
+                        <input type="checkbox" id="hindi" name="language[]" value="hindi">
+                        <label for="hindi">Hindi</label>
+                        <input type="checkbox" id="tamil" name="language[]" value="tamil">
+                        <label for="tamil">Tamil</label>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <textarea id="address" name="address" required></textarea>
+                    </div>
+                    <center><input type="submit" value="Register"></center>
+                </form>
+            </div>
+            <script>
+                const selectDay = document.getElementById("day");
+                const year = new Date().getFullYear();
+                const selectYear = document.getElementById("year");
+                for (let i = 1; i <= 31; i++) {
+                    const option = document.createElement("option");
+                    option.value = i;
+                    option.textContent = i;
+                    selectDay.appendChild(option);
+                }
+
+                for (let i = 1500; i <= year; i++) {
+                    const option = document.createElement("option");
+                    option.value = i;
+                    option.textContent = i;
+                    selectYear.appendChild(option);
+                }
+
+                function validateRegistration() {
+                    var name = document.getElementById("name").value;
+                    var password = document.getElementById("password").value;
+                    var email = document.getElementById("email").value;
+                    var phone = document.getElementById("phone").value;
+
+                    // Regular expression patterns for validation
+                    var namePattern = /^[a-zA-Z]+( [a-zA-Z]+)*$/;
+                    var passwordPattern = /^.{6,}$/;
+                    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    var phonePattern = /^\d{10}$/;
+
+                    // Validation for Name
+                    if (!namePattern.test(name)) {
+                        alert("Name should contain only alphabets and have a minimum length of 6 characters.");
+                        return false;
+                    }
+
+                    // Validation for Password
+                    if (!passwordPattern.test(password)) {
+                        alert("Password should have a minimum length of 6 characters.");
+                        return false;
+                    }
+
+                    // Validation for Email
+                    if (!emailPattern.test(email)) {
+                        alert("Please enter a valid email address.");
+                        return false;
+                    }
+
+                    // Validation for Phone number
+                    if (!phonePattern.test(phone)) {
+                        alert("Phone number should contain 10 digits only.");
+                        return false;
+                    }
+
+                    // If all validations pass, return true to submit the form
+                    return true;
+                }
+            </script>
+</body>
+
+</html>
